@@ -144,6 +144,12 @@ tbody td {
   font-size: 0.95rem;
   color: #333;
 }
+tbody tr.new-tier {
+  background: #f7fbff;
+}
+tbody tr.new-tier td {
+  color: #1e6fb5;
+}
 
 /* FEATURES */
 .features {
@@ -208,8 +214,7 @@ footer {
   text-align: center;
   padding: 2rem;
   background: #0d1b2a;
-  color: #556;
   color: #7a9ab5;
   font-size: 0.85rem;
   margin-top: 4rem;
-}
+  }
