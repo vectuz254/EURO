@@ -1,170 +1,37 @@
-index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EuroFlow Capital Group</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Soccer Doodle</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <nav>
-      <span class="logo">⚡ EuroFlow Capital Group</span>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#tiers">Financing</a></li>
-        <li><a href="#why">Why Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="doodle-container">
+        <span class="letter">G</span>
+        
+        <div class="action-zone">
+            
+            <div class="player player-pink">
+                <div class="head"></div>
+                <div class="torso"></div>
+            </div>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1>⚡ FAST-TRACK EUROPEAN CAPITAL</h1>
-      <p class="tagline">Skip the Bureaucratic Delays. Get Funded Directly.</p>
-      <p class="hero-desc">
-        Are you looking for responsive, reliable funding without institutional delays?
-        Our private direct financing paths are structured cleanly for rapid approval,
-        ease of documentation, and bulletproof transactional safety.
-      </p>
-      <a href="#tiers" class="btn">View Financing Options</a>
+            <div class="player player-white">
+                <div class="head"></div>
+                <div class="torso"></div>
+                <div class="leg standing-leg"></div>
+                <div class="leg kicking-leg" id="kickingLeg"></div>
+            </div>
+
+            <div class="ball" id="soccerBall"></div>
+        </div>
+
+        <span class="letter">gle</span>
     </div>
-  </section>
 
-  <!-- FINANCING TIERS -->
-  <section id="tiers">
-    <h2>Choose Your Financing Bracket</h2>
-    <p class="section-sub">Select the capital tier that fits your business needs.</p>
-
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Capital Tier</th>
-            <th>Amount</th>
-            <th>Approval Speed</th>
-            <th>Apply</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>💎 Premium Tier</td>
-            <td>€15,000</td>
-            <td>24–48 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-          <tr>
-            <td>🏆 Gold Tier</td>
-            <td>€10,000</td>
-            <td>24–48 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-          <tr>
-            <td>🥈 Silver Tier</td>
-            <td>€6,000</td>
-            <td>48–72 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-          <tr>
-            <td>📦 Standard Tier</td>
-            <td>€5,000</td>
-            <td>48–72 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-          <tr>
-            <td>🌱 Starter Tier</td>
-            <td>€3,000</td>
-            <td>72 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-          <tr class="new-tier">
-            <td>🔵 Basic Tier</td>
-            <td>€1,000</td>
-            <td>72 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-          <tr class="new-tier">
-            <td>🟢 Mini Tier</td>
-            <td>€600</td>
-            <td>72 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-          <tr class="new-tier">
-            <td>🟡 Light Tier</td>
-            <td>€500</td>
-            <td>72–96 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-          <tr class="new-tier">
-            <td>🟠 Micro Tier</td>
-            <td>€300</td>
-            <td>72–96 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-          <tr class="new-tier">
-            <td>🔴 Nano Tier</td>
-            <td>€100</td>
-            <td>96 hrs</td>
-            <td><a href="#contact" class="btn-sm">Apply</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section id="why">
-    <h2>Why Clients Trust Our Pipeline</h2>
-    <div class="features">
-      <div class="feature-card">
-        <span class="icon">📄</span>
-        <h3>Zero Paperwork Overload</h3>
-        <p>Fully optimized, online-only onboarding framework. No unnecessary documentation.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">✅</span>
-        <h3>Predetermined Tiers</h3>
-        <p>You know exactly what terms you qualify for right from the start. No surprises.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">🏦</span>
-        <h3>Rapid SEPA Integration</h3>
-        <p>Fast-cleared capital delivery directly onto your corporate or personal Eurozone bank account.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Ready to Initiate Capital Deployment?</h2>
-    <p>Reach out to our team and we'll help you get started with the right financing bracket.</p>
-    <div class="contact-box">
-      <input type="text" placeholder="Your Full Name" />
-      <input type="email" placeholder="Your Email Address" />
-      <select>
-        <option>Select Capital Tier</option>
-        <option>€15,000 – Premium Tier</option>
-        <option>€10,000 – Gold Tier</option>
-        <option>€6,000 – Silver Tier</option>
-        <option>€5,000 – Standard Tier</option>
-        <option>€3,000 – Starter Tier</option>
-        <option>€1,000 – Basic Tier</option>
-        <option>€600 – Mini Tier</option>
-        <option>€500 – Light Tier</option>
-        <option>€300 – Micro Tier</option>
-        <option>€100 – Nano Tier</option>
-      </select>
-      <button class="btn">Submit Application</button>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 EuroFlow Capital Group — Confidential Marketing Portfolio</p>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
