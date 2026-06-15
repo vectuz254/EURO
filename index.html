@@ -1,37 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Soccer Doodle</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joint Hands Charity – Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
-    <div class="doodle-container">
-        <span class="letter">G</span>
-        
-        <div class="action-zone">
-            
-            <div class="player player-pink">
-                <div class="head"></div>
-                <div class="torso"></div>
-            </div>
-
-            <div class="player player-white">
-                <div class="head"></div>
-                <div class="torso"></div>
-                <div class="leg standing-leg"></div>
-                <div class="leg kicking-leg" id="kickingLeg"></div>
-            </div>
-
-            <div class="ball" id="soccerBall"></div>
-        </div>
-
-        <span class="letter">gle</span>
+ 
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-icon">🤝</span>
+        <span class="logo-text">Joint Hands <em>Charity</em></span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">What We Do</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#donate" class="nav-cta">Donate Now</a></li>
+      </ul>
     </div>
-
-    <script src="script.js"></script>
+  </nav>
+ 
+  <!-- ── HERO ── -->
+  <section id="home" class="hero">
+    <div class="hero-diagonal"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Nairobi, Kenya · Est. 2015</p>
+      <h1 class="hero-headline">
+        Pamoja<br/>
+        <span class="accent-word">Tunaweza.</span>
+      </h1>
+      <p class="hero-sub">Together We Can — building healthier, stronger communities one family at a time.</p>
+      <div class="hero-actions">
+        <a href="#donate" class="btn-primary">Donate Today</a>
+        <a href="#about" class="btn-ghost">Our Story ↓</a>
+      </div>
+    </div>
+    <div class="hero-image-block">
+      <!-- Replace src with real photo -->
+      <img src="images/hero.jpg" alt="Community members smiling together in Kenya" onerror="this.style.background='#1B4332';this.removeAttribute('src')"/>
+      <div class="hero-badge">
+        <span class="badge-number" data-target="4000">0</span>
+        <span class="badge-label">Lives Touched</span>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ── ABOUT ── -->
+  <section id="about" class="about section-pad">
+    <div class="container two-col">
+      <div class="about-text">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2>A Community Standing<br/>for Each Other</h2>
+        <p>Joint Hands Charity was founded on a simple belief: that every person in our community deserves dignity, opportunity, and care. Based in Kenya, we work directly alongside families in need — bringing education, food security, healthcare access, and hope to those who need it most.</p>
+        <p>We are not outsiders delivering aid. We are neighbours building futures.</p>
+        <a href="#services" class="btn-primary">Explore Our Work</a>
+      </div>
+      <div class="about-image">
+        <!-- Replace src with real photo -->
+        <img src="images/about.jpg" alt="Volunteers working with community members" onerror="this.style.background='#A0522D';this.removeAttribute('src')"/>
+        <div class="about-caption">"Every hand joined is a future lifted."</div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ── SERVICES ── -->
+  <section id="services" class="services section-pad bg-cream">
+    <div class="container">
+      <p class="section-eyebrow center">What We Do</p>
+      <h2 class="center">Programs That Change Lives</h2>
+      <div class="services-grid">
+ 
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h3>Education Support</h3>
+          <p>Scholarships, school supplies, and mentorship programs ensuring children stay in school and thrive.</p>
+        </div>
+ 
+        <div class="service-card">
+          <div class="service-icon">🍽️</div>
+          <h3>Food Security</h3>
+          <p>Regular food distributions and community kitchen programs fighting hunger in vulnerable households.</p>
+        </div>
+ 
+        <div class="service-card">
+          <div class="service-icon">🏥</div>
+          <h3>Healthcare Access</h3>
+          <p>Free medical camps, health education, and partnerships with clinics to serve those without coverage.</p>
+        </div>
+ 
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Clean Water</h3>
+          <p>Borehole drilling and water purification projects bringing safe drinking water to remote villages.</p>
+        </div>
+ 
+        <div class="service-card">
+          <div class="service-icon">👩‍👧</div>
+          <h3>Women Empowerment</h3>
+          <p>Skills training, microfinance groups, and entrepreneurship workshops helping women become independent.</p>
+        </div>
+ 
+        <div class="service-card">
+          <div class="service-icon">🌱</div>
+          <h3>Youth Development</h3>
+          <p>Sports, arts, and vocational programmes that keep youth engaged, skilled, and hopeful for the future.</p>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ── GALLERY ── -->
+  <section id="gallery" class="gallery section-pad">
+    <div class="container">
+      <p class="section-eyebrow center">Our Work in Pictures</p>
+      <h2 class="center">Moments That Matter</h2>
+      <p class="section-desc center">Every photograph is a story of resilience, community, and change.</p>
+      <div class="photo-grid">
+        <!-- Replace src attributes with real photos. Add as many <div class="photo-item"> blocks as needed -->
+        <div class="photo-item tall">
+          <img src="images/gallery1.jpg" alt="Children receiving school supplies" onerror="this.parentElement.classList.add('placeholder')"/>
+          <div class="photo-overlay"><span>Education Drive 2024</span></div>
+        </div>
+        <div class="photo-item">
+          <img src="images/gallery2.jpg" alt="Food distribution event" onerror="this.parentElement.classList.add('placeholder')"/>
+          <div class="photo-overlay"><span>Monthly Food Drive</span></div>
+        </div>
+        <div class="photo-item">
+          <img src="images/gallery3.jpg" alt="Medical camp volunteers" onerror="this.parentElement.classList.add('placeholder')"/>
+          <div class="photo-overlay"><span>Free Medical Camp</span></div>
+        </div>
+        <div class="photo-item wide">
+          <img src="images/gallery4.jpg" alt="Community gathering" onerror="this.parentElement.classList.add('placeholder')"/>
+          <div class="photo-overlay"><span>Community Day 2024</span></div>
+        </div>
+        <div class="photo-item">
+          <img src="images/gallery5.jpg" alt="Women empowerment workshop" onerror="this.parentElement.classList.add('placeholder')"/>
+          <div class="photo-overlay"><span>Women's Workshop</span></div>
+        </div>
+        <div class="photo-item">
+          <img src="images/gallery6.jpg" alt="Water project inauguration" onerror="this.parentElement.classList.add('placeholder')"/>
+          <div class="photo-overlay"><span>Borehole Launch</span></div>
+        </div>
+      </div>
+      <p class="gallery-note center">📸 More photos coming soon. Follow our work on social media.</p>
+    </div>
+  </section>
+ 
+  <!-- ── IMPACT COUNTERS ── -->
+  <section id="impact" class="impact section-pad bg-dark">
+    <div class="container">
+      <p class="section-eyebrow center light">Our Impact</p>
+      <h2 class="center light">Numbers That Speak</h2>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <span class="impact-number" data-target="4000">0</span>
+          <span class="impact-label">Families Supported</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number" data-target="1200">0</span>
+          <span class="impact-label">Children in School</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number" data-target="15">0</span>
+          <span class="impact-label">Villages Reached</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number" data-target="300">0</span>
+          <span class="impact-label">Volunteers Strong</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ── TESTIMONIAL ── -->
+  <section class="testimonial section-pad bg-cream">
+    <div class="container narrow">
+      <div class="quote-block">
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">Before Joint Hands Charity came to our village, my children had never seen a doctor. Now they go to school, eat well, and have a future. This organisation changed everything for us.</p>
+        <div class="quote-author">
+          <strong>— Wanjiru M.</strong>
+          <span>Mother of three, Kiambu County</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ── DONATE ── -->
+  <section id="donate" class="donate section-pad">
+    <div class="container">
+      <div class="donate-inner">
+        <div class="donate-text">
+          <p class="section-eyebrow">Make a Difference</p>
+          <h2>Your Gift Transforms Lives</h2>
+          <p>Every shilling and every dollar goes directly to the people who need it. No overhead bloat — just real change in real communities.</p>
+          <ul class="donate-impact-list">
+            <li><span class="donate-amount">KSh 500</span> feeds a child for a week</li>
+            <li><span class="donate-amount">KSh 2,000</span> provides a school term's supplies</li>
+            <li><span class="donate-amount">KSh 5,000</span> covers a family's medical costs for a month</li>
+            <li><span class="donate-amount">KSh 10,000</span> sponsors a child's full school year</li>
+          </ul>
+        </div>
+        <div class="donate-card">
+          <h3>How to Donate</h3>
+ 
+          <div class="donate-method">
+            <div class="method-icon">📱</div>
+            <div>
+              <strong>M-Pesa</strong>
+              <p>Paybill: <span class="highlight">XXXXXX</span><br/>Account: Joint Hands Charity</p>
+            </div>
+          </div>
+ 
+          <div class="donate-method">
+            <div class="method-icon">🏦</div>
+            <div>
+              <strong>Bank Transfer</strong>
+              <p>Bank: <span class="highlight">Your Bank Name</span><br/>
+              Account No: <span class="highlight">XXXXXXXXXXXX</span><br/>
+              Branch: Nairobi</p>
+            </div>
+          </div>
+ 
+          <div class="donate-method">
+            <div class="method-icon">🌍</div>
+            <div>
+              <strong>International</strong>
+              <p>PayPal / Western Union<br/>
+              Email: <span class="highlight">donate@jointhandscharity.org</span></p>
+            </div>
+          </div>
+ 
+          <a href="mailto:donate@jointhandscharity.org" class="btn-primary full-width">Contact Us to Donate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="logo-text footer-logo">Joint Hands <em>Charity</em></p>
+        <p>Nairobi, Kenya<br/>Registered Charity · Est. 2015</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Programs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#donate">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📧 info@jointhandscharity.org</p>
+        <p>📞 +254 700 000 000</p>
+        <p>📍 Nairobi, Kenya</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Joint Hands Charity, Kenya. All rights reserved. Built with ❤️ for the community.</p>
+    </div>
+  </footer>
+ 
+  <script src="script.js"></script>
 </body>
 </html>
