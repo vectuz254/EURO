@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Members Login – Joint Hands Charity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="auth-body">
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🤝</span>
+        <span class="logo-text">Joint Hands <em>Charity</em></span>
+      </a>
+    </div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <p class="section-eyebrow center">Members Area</p>
+      <h2 class="center" id="authTitle">Welcome Back</h2>
+      <p class="center auth-sub" id="authSub">Log in to access member resources and updates.</p>
+
+      <div id="authError" class="auth-error" hidden></div>
+
+      <!-- LOG IN FORM -->
+      <form id="loginForm" class="auth-form">
+        <label>Email
+          <input type="email" id="loginEmail" required autocomplete="email"/>
+        </label>
+        <label>Password
+          <input type="password" id="loginPassword" required autocomplete="current-password"/>
+        </label>
+        <button type="submit" class="btn-primary full-width">Log In</button>
+      </form>
+
+      <!-- SIGN UP FORM -->
+      <form id="signupForm" class="auth-form" hidden>
+        <label>Full Name
+          <input type="text" id="signupName" required autocomplete="name"/>
+        </label>
+        <label>Email
+          <input type="email" id="signupEmail" required autocomplete="email"/>
+        </label>
+        <label>Password
+          <input type="password" id="signupPassword" required minlength="6" autocomplete="new-password"/>
+        </label>
+        <button type="submit" class="btn-primary full-width">Create Account</button>
+      </form>
+
+      <p class="auth-toggle center">
+        <span id="toggleToSignup">New member? <a href="#" id="showSignup">Create an account</a></span>
+        <span id="toggleToLogin" hidden>Already a member? <a href="#" id="showLogin">Log in</a></span>
+      </p>
+
+      <a href="index.html" class="auth-back">← Back to site</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2025 Joint Hands Charity, Kenya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { signUp, logIn, watchAuth, friendlyAuthError } from "./js/auth.js";
+
+    const authTitle    = document.getElementById('authTitle');
+    const authSub      = document.getElementById('authSub');
+    const authError    = document.getElementById('authError');
+    const loginForm    = document.getElementById('loginForm');
+    const signupForm   = document.getElementById('signupForm');
+    const showSignup   = document.getElementById('showSignup');
+    const showLogin    = document.getElementById('showLogin');
+    const toggleToSignup = document.getElementById('toggleToSignup');
+    const toggleToLogin  = document.getElementById('toggleToLogin');
+
+    function showError(msg) {
+      authError.textContent = msg;
+      authError.hidden = false;
+    }
+    function clearError() {
+      authError.hidden = true;
+    }
+
+    showSignup.addEventListener('click', (e) => {
+      e.preventDefault();
+      clearError();
+      loginForm.hidden = true;
+      signupForm.hidden = false;
+      toggleToSignup.hidden = true;
+      toggleToLogin.hidden = false;
+      authTitle.textContent = 'Create Your Account';
+      authSub.textContent = 'Join as a member to get access to updates and resources.';
+    });
+
+    showLogin.addEventListener('click', (e) => {
+      e.preventDefault();
+      clearError();
+      signupForm.hidden = true;
+      loginForm.hidden = false;
+      toggleToLogin.hidden = true;
+      toggleToSignup.hidden = false;
+      authTitle.textContent = 'Welcome Back';
+      authSub.textContent = 'Log in to access member resources and updates.';
+    });
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearError();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      try {
+        await logIn(email, password);
+        window.location.href = 'dashboard.html';
+      } catch (err) {
+        showError(friendlyAuthError(err));
+      }
+    });
+
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearError();
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+      try {
+        await signUp(name, email, password);
+        window.location.href = 'dashboard.html';
+      } catch (err) {
+        showError(friendlyAuthError(err));
+      }
+    });
+
+    // If already logged in, skip straight to dashboard
+    watchAuth((user) => {
+      if (user) window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>
